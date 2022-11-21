@@ -45,6 +45,7 @@ class Sender {
 			: `${phoneNumber}@c.us`
 		await this.client.sendText(phoneNumber, body)
 	}
+
 	private initializer() {
 		const qr = (base64Qr: string, attempts: number) => {
 			this.qr = { base64Qr, attempts }
@@ -61,16 +62,18 @@ class Sender {
 			})
 		}
 
+		// lugar onde se troca a criação do client da lib.
+		// -----------------------------------------------
 		create({
 			session: 'API-REST',
-			// statusFind: (statusSession, session) => {
-			statusFind: (session) => {
-				// console.log('Status da Sessão: ', statusSession)
+			statusFind: (statusSession, session) => {
+				console.log('Status da Sessão: ', statusSession)
 				console.log('Nome da Sessão: ', session)
 			},
 		})
 			.then((client) => start(client))
 			.catch((error) => console.log(error))
+		// -----------------------------------------------
 	}
 }
 export default Sender
