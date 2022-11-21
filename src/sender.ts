@@ -2,8 +2,8 @@ import parsePhoneNumber, {
 	isValidNumber,
 	isValidPhoneNumber,
 } from 'libphonenumber-js'
-import { type } from 'os'
-import { start } from 'repl'
+// import { type } from 'os'
+// import { start } from 'repl'
 import {
 	create,
 	Whatsapp,
