@@ -16,7 +16,7 @@ app.get('/status', (req: Request, res: Response) => {
         connected: sender.isConected
 })
 })
-
+//TODO: TEST DE VERSIONAMENTO COM INTELLIJ IDEA
 app.post('/send', async (req: Request, res: Response) => {
     const { number, message } = req.body
     try {
