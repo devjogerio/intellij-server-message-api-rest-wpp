@@ -2,6 +2,7 @@
 import express, { Request, Response } from 'express'
 import { resolve } from 'path'
 
+// biblioteca {sender} importdada para o projeto
 import Sender from './sender'
 
 const sender = new Sender()
@@ -16,7 +17,7 @@ app.get('/status', (req: Request, res: Response) => {
         connected: sender.isConected
 })
 })
-//TODO: TEST DE VERSIONAMENTO COM INTELLIJ IDEA
+// TEST DE VERSIONAMENTO COM INTELLIJ IDEA
 app.post('/send', async (req: Request, res: Response) => {
     const { number, message } = req.body
     try {
