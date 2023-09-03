@@ -1,8 +1,5 @@
 
 import express, { Request, Response } from 'express'
-import { resolve } from 'path'
-
-// biblioteca {sender} importdada para o projeto
 import Sender from './sender'
 
 const sender = new Sender()
@@ -21,7 +18,7 @@ app.get('/status', (req: Request, res: Response) => {
 app.post('/send', async (req: Request, res: Response) => {
     const { number, message } = req.body
     try {
-        // validando e tratando o numero do whatsapp
+        // validating and treating the WhatsApp number
         await sender.sendText(number, message)
             return res.status(200).json()
     } catch (error) {
